@@ -1,0 +1,183 @@
+<div class="sidebar">
+
+    <!-- Workspace selector -->
+    <button type="button" class="workspace-selector" (click)="toggleWorkspaces()">
+
+        <span class="logo">DA</span>
+
+        <span class="workspace-info">
+            <strong>Data Analytics</strong>
+            <small>Member</small>
+        </span>
+
+        <mat-icon>
+            {{ showWorkspaces ? 'expand_less' : 'unfold_more' }}
+        </mat-icon>
+
+    </button>
+
+    <!-- Workspace dropdown -->
+    @if (showWorkspaces) {
+    <div class="workspace-dropdown">
+
+        <p class="section-title">
+            Workspaces ({{ workspaces.length + 1 }})
+        </p>
+
+        <button type="button" class="workspace-item" (click)="selectWorkspace('Data Analytics')">
+
+            <span class="logo">DA</span>
+
+            <span class="workspace-info">
+                <strong>Data Analytics</strong>
+                <small>Member</small>
+            </span>
+
+        </button>
+
+        @for (workspace of workspaces; track workspace.id) {
+        <button type="button" class="workspace-item" (click)="selectWorkspace(workspace.name)">
+
+            <span class="logo">
+                {{ workspace.name.substring(0, 2).toUpperCase() }}
+            </span>
+
+            <span class="workspace-info">
+                <strong>{{ workspace.name }}</strong>
+                <small>Member</small>
+            </span>
+
+        </button>
+        }
+
+        <button mat-button type="button" class="add-button" (click)="openAddWorkspace()">
+
+            <mat-icon>add</mat-icon>
+            <span>Add workspace</span>
+
+        </button>
+
+    </div>
+    }
+
+    <!-- Main menu -->
+    <mat-nav-list>
+
+        @for (item of menuItems; track item.name) {
+        <a mat-list-item [routerLink]="item.path" routerLinkActive="active-menu"
+            [routerLinkActiveOptions]="{ exact: true }">
+
+            <mat-icon matListItemIcon>
+                {{ item.icon }}
+            </mat-icon>
+
+            <span matListItemTitle>
+                {{ item.name }}
+            </span>
+
+        </a>
+        }
+
+    </mat-nav-list>
+
+    <!-- Shortcuts -->
+    <p class="section-title shortcuts-title">
+        Shortcuts
+    </p>
+
+    <mat-nav-list>
+
+        @for (item of shortcuts; track item.name) {
+        <a mat-list-item [routerLink]="item.path" routerLinkActive="active-menu">
+
+            <mat-icon matListItemIcon>
+                {{ item.icon }}
+            </mat-icon>
+
+            <span matListItemTitle>
+                {{ item.name }}
+            </span>
+
+        </a>
+        }
+
+    </mat-nav-list>
+
+    <!-- Spacer -->
+    <div class="sidebar-spacer"></div>
+
+    <!-- Profile -->
+    <div class="profile">
+
+        <button mat-button type="button" class="profile-button" [matMenuTriggerFor]="profileMenu">
+
+            <span class="profile-content">
+
+                <span class="avatar">ES</span>
+
+                <span class="profile-name">
+                    Emma Stone
+                </span>
+
+                <mat-icon>more_vert</mat-icon>
+
+            </span>
+
+        </button>
+
+    </div>
+
+    <!-- Profile menu -->
+    <mat-menu #profileMenu="matMenu">
+
+        <button mat-menu-item disabled>
+            <span>emma.stone&#64;acme.com</span>
+        </button>
+
+        <mat-divider></mat-divider>
+
+        <button mat-menu-item [matMenuTriggerFor]="themeMenu">
+
+            <mat-icon>palette</mat-icon>
+            <span>Theme</span>
+
+        </button>
+
+    </mat-menu>
+
+    <!-- Theme menu -->
+    <mat-menu #themeMenu="matMenu">
+
+        <button mat-menu-item (click)="setTheme('light')">
+
+            <mat-icon>
+                {{ selectedTheme === 'light' ? 'check' : 'light_mode' }}
+            </mat-icon>
+
+            <span>Light</span>
+
+        </button>
+
+        <button mat-menu-item (click)="setTheme('dark')">
+
+            <mat-icon>
+                {{ selectedTheme === 'dark' ? 'check' : 'dark_mode' }}
+            </mat-icon>
+
+            <span>Dark</span>
+
+        </button>
+
+        <button mat-menu-item (click)="setTheme('system')">
+
+            <mat-icon>
+                {{ selectedTheme === 'system' ? 'check' : 'computer' }}
+            </mat-icon>
+
+            <span>System</span>
+
+        </button>
+
+    </mat-menu>
+
+</div>

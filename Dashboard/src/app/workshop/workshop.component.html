@@ -1,0 +1,82 @@
+<h2 mat-dialog-title>Add new workspace</h2>
+<mat-dialog-content>
+  <p class="subtitle">
+    With the free plan, you can add up to 10 workspaces.
+  </p>
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+
+    <div class="form-row">
+      <mat-form-field appearance="outline">
+        <mat-label>Workspace name</mat-label>
+        <input matInput formControlName="name" placeholder="my_workspace">
+
+        @if (form.controls.name.hasError('required') &&
+        form.controls.name.touched) {
+        <mat-error>Workspace should be min 3 characters</mat-error>
+        }
+
+        @if (form.controls.name.hasError('minlength') &&
+        form.controls.name.touched) {
+        <mat-error>Workspace should be min 3 characters</mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Starter kit</mat-label>
+        <mat-select formControlName="starterKit">
+          @for (kit of starterKits; track kit.value) {
+          <mat-option [value]="kit.value">
+            {{ kit.label }}
+          </mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Database region</mat-label>
+      <mat-select formControlName="region">
+        @for (region of regions; track region.value) {
+        <mat-option [value]="region.value">
+          {{ region.label }}
+        </mat-option>
+        }
+      </mat-select>
+
+      <mat-hint>
+        For best performance, choose a region closest to your application.
+      </mat-hint>
+    </mat-form-field>
+
+    <p class="config-title">Database configuration</p>
+
+    <mat-radio-group formControlName="performance" class="performance-options">
+
+      @for (item of performances; track item.value) {
+      <label class="performance-card" [class.selected]="form.controls.performance.value === item.value">
+
+        <mat-radio-button [value]="item.value">
+          <span class="performance-name">{{ item.label }}</span>
+          <span class="performance-details">{{ item.details }}</span>
+        </mat-radio-button>
+
+        @if (item.value === 'base') {
+        <span class="recommended">Recommended</span>
+        }
+      </label>
+      }
+    </mat-radio-group>
+
+    <div class="dialog-actions">
+      <button mat-button type="button" (click)="goBack()">
+       Go Back
+      </button>
+
+      <button mat-flat-button color="primary" type="submit" [disabled]="form.invalid || data.workspaceCount >= 10">
+        Add workspace
+      </button>
+    </div>
+
+  </form>
+</mat-dialog-content>

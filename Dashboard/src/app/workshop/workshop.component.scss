@@ -1,0 +1,166 @@
+
+:host {
+  display: block;
+  font-family: Arial, sans-serif;
+}
+
+h2[mat-dialog-title] {
+  margin-bottom: 8px;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+mat-dialog-content {
+  box-sizing: border-box;
+  padding-top: 8px;
+  max-height: 75vh;
+  overflow-y: auto;
+}
+
+.subtitle {
+  margin-bottom: 22px;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+}
+
+.form-row mat-form-field {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+}
+
+.full-width {
+  width: 100%;
+  margin-top: 4px;
+}
+
+.config-title {
+  margin: 18px 0 12px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.performance-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.performance-card {
+  box-sizing: border-box;
+  display: flex;
+  flex: 1 1 200px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-width: 0;
+  padding: 12px 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.performance-card.selected {
+  border-color: #2563eb;
+  background: #f8faff;
+}
+
+.performance-card mat-radio-button {
+  min-width: 0;
+}
+
+.performance-name,
+.performance-details {
+  display: block;
+  white-space: normal;
+}
+
+.performance-name {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.performance-details {
+  margin-top: 5px;
+  color: #64748b;
+  font-size: 12px;
+}
+
+.recommended {
+  flex-shrink: 0;
+  padding: 4px 7px;
+  border-radius: 12px;
+  background: #dbeafe;
+  color: #1d4ed8;
+  font-size: 10px;
+}
+
+.dialog-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 24px;
+  padding-bottom: 8px;
+}
+
+
+/* Option select karne par layout stable rahe */
+.performance-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  align-items: stretch;
+}
+
+.performance-card {
+  box-sizing: border-box;
+  min-width: 0;
+  height: 100%;
+}
+
+.performance-card.selected {
+  border: 1px solid #2563eb;
+  background: #f8faff;
+}
+
+@media (max-width: 600px) {
+  .performance-options {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+@media (max-width: 600px) {
+  h2[mat-dialog-title] {
+    font-size: 19px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .performance-options {
+    flex-direction: column;
+  }
+
+  .performance-card {
+    flex-basis: auto;
+    width: 100%;
+  }
+
+  .recommended {
+    white-space: normal;
+  }
+
+  .dialog-actions button {
+    min-height: 40px;
+  }
+}
