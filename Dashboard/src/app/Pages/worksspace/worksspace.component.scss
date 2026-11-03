@@ -1,0 +1,206 @@
+ 
+ .billing-section-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%; // provides full width to template
+
+ }
+
+ .billing-row-content{
+    display: flex !important;
+    gap: 24px !important;
+    margin-right: 0 !important;
+ }
+
+// Billing table 
+
+.billing-table {
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+.billing-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 16px 0;
+  border-bottom: 1px solid #eef2f6; /* Divider after each entry */
+}
+
+/* Automatically removes divider from the final row */
+.billing-row:last-child {
+  
+  align-items: center;
+  padding-top: 20px;
+}
+
+.billing-info {
+  flex: 1;
+  padding-right: 16px;
+}
+
+.item-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 2px;
+}
+
+.item-subtitle {
+  font-size: 12px;
+  color: #64748b;
+}
+
+mat-progress-bar {
+  height: 5px;
+  border-radius: 3px;
+  margin-bottom: 4px;
+}
+
+.progress-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #64748b;
+}
+
+.billing-price {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0f172a;
+  white-space: nowrap;
+}
+
+.total-price {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.dollar-icon {
+  width: 18px !important;
+  height: 18px !important;
+  font-size: 16px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: -2px;
+  color: #0f172a;
+}
+
+mat-divider {
+  border-top-color: #cbd5e1 !important; 
+  border-top-width: 1px !important;    
+  display: block;
+
+}
+
+// cost spend section css
+
+/* Grey-blue update button styling */
+.update-btn {
+  border-radius: 20px;
+  padding: 0 24px;
+  background-color: #e2e8f0 !important;
+  color: #0f172a !important;
+  font-weight: 500;
+  box-shadow: none;
+
+  &:hover {
+    background-color: #cbd5e1 !important;
+  }
+}
+
+
+// add-ones css
+
+.addon-card {
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 12px !important;
+  box-shadow: none !important;
+  overflow: hidden;
+
+  .card-body-content {
+    padding: 24px !important;
+  }
+
+  .price-tag {
+    font-size: 13px;
+    color: #64748b;
+    margin-bottom: 8px;
+  }
+
+  .addon-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 8px;
+  }
+
+  .addon-description {
+    font-size: 13px;
+    color: #475569;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  // Footer Section with Space Between Toggle and Button
+  .card-footer-section {
+    background-color: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between; // Creates clean spacing between left and right elements
+    align-items: center;
+
+    // Slide Toggle Customization
+    .mat-mdc-slide-toggle.custom-toggle {
+      .mdc-form-field {
+        font-size: 14px;
+        color: #0f172a;
+      }
+
+      .mdc-switch__thumb {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+      }
+
+      mat-icon {
+        font-size: 14px;
+        width: 14px;
+        height: 14px;
+        color: #94a3b8;
+      }
+    }
+
+    // "Learn more" Clickable Action (Text left, Icon right)
+    .learn-more-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px; // Space between text and arrow icon
+      font-size: 14px;
+      font-weight: 500;
+      color: #0052cc;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: none;
+      }
+
+      .arrow-icon {
+        font-size: 16px;
+        width: 16px;
+        height: 16px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+    }
+  }
+}

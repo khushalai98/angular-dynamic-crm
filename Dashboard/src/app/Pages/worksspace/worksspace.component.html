@@ -1,0 +1,187 @@
+<app-navsetting></app-navsetting>
+
+<div class="container-fluid">
+
+    <div class="header-plan-card mt-4">
+        <mat-card appearance="outlined">
+            <mat-card-header>
+                <mat-card-title>
+                    <h4 class="mb-1 fw-medium p-2">This workspace is currently on free plan</h4>
+                </mat-card-title>
+                <mat-card-subtitle class="text-secondary p-2">Boost your analytics and unlock advanced
+                    features with our premium plans.
+                    <a href="#"
+                        class="text-primary text-decoration-none fw-medium d-inline-flex align-items-center gap-1">
+                        <span>Compare plans</span>
+                        <mat-icon style="font-size: 16px; width: 16px; height: 16px;">north_east</mat-icon>
+                    </a>
+                </mat-card-subtitle>
+            </mat-card-header>
+        </mat-card>
+    </div>
+    <br>
+
+
+    <div class="row billing-section-row mt-4">
+        <div class="col-4 billing-text">
+            <h6>Billing</h6>
+            <p>Overview of current billing cycle based on fixed and on-demand charges.</p>
+        </div>
+        <div class="col-2"></div>
+
+        <div class="col-6 billing-table">
+
+            <div *ngFor="let item of billingItems" class="billing-row" [ngClass]="{'total-row': item.isTotal}">
+
+                <!-- Left Side: Title, Subtitle, or Progress Bar -->
+                <div class="billing-info">
+                    <!-- <div [ngClass]="item.isTotal ? 'total-label' : 'item-title'">{{ item.title }}</div> -->
+                    <div class="item-subtitle" *ngIf="item.subtitle">{{ item.subtitle }}</div>
+
+                    <div class="progress-container" *ngIf="item.progressValue !== undefined">
+                        <mat-progress-bar mode="determinate" [value]="item.progressValue"></mat-progress-bar>
+                        <div class="progress-labels">
+                            <span>{{ item.usedText }}</span>
+                            <span>{{ item.includedText }}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side: Price -->
+                <div class="billing-price" [ngClass]="{'total-price': item.isTotal}">
+                    <mat-icon class="dollar-icon">attach_money</mat-icon>
+                    <span>{{ item.price }}</span>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- cost-spend section -->
+    <mat-divider class="my-4"></mat-divider>
+
+    <div class="row cost-spend-row mt-4 mb-4">
+        <div class="col-4">
+            <h6>Cost spend control</h6>
+            <p>Set hard caps for on-demand charges.</p>
+        </div>
+        <div class="col-2"></div>
+
+        <div class="col-6">
+            <div [formGroup]="spendControlForm">
+
+                <!-- Top sub-row for Spinner (left) and Toggle (right) -->
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="spend-progress-indicator d-flex align-items-center gap-3">
+                        <mat-spinner diameter="32" mode="determinate" [value]="62.2"
+                            class="custom-spinner"></mat-spinner>
+                        <div class="progress-text-group">
+                            <span class="main-stats">$280 / 350 (62.2%)</span>
+                            <span class="sub-stats d-block text-muted">Spend management enabled</span>
+                        </div>
+                    </div>
+
+                    <div class="spend-toggle">
+                        <mat-slide-toggle formControlName="isEnabled" color="primary"></mat-slide-toggle>
+                    </div>
+                </div>
+
+                <!-- Inputs Row (Amount and Email side-by-side) -->
+                <div class="row g-3 mb-3">
+                    <div class="col-md-4">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Set amount ($)</mat-label>
+                            <input matInput type="number" formControlName="amount">
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-8">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Provide email for notifications</mat-label>
+                            <input matInput type="email" placeholder="admin@company.com" formControlName="email">
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <!-- Action Button aligned to the right -->
+                <div class="d-flex justify-content-end">
+                    <button mat-flat-button type="button" (click)="onUpdate()" class="update-btn">
+                        Update
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <mat-divider class="my-4"></mat-divider>
+
+    <!-- add ones section -->
+
+    <div class="row add-one-container">
+        <div class="col-4">
+            <h3>Add-Ons</h3>
+            <p>Additional services to boost your services.</p>
+        </div>
+
+        <div class="col-8">
+            <div class="container mt-5">
+                <mat-card class="addon-card" [formGroup]="addonForm">
+
+                    <!-- Main Content Area -->
+                    <mat-card-content class="card-body-content">
+                        <div class="price-tag">$25.00/month</div>
+                        <h3 class="addon-title">Advanced bot protection</h3>
+                        <p class="addon-description">
+                            Safeguard your assets with our cutting-edge bot protection.
+                            Our AI solution identifies and mitigates automated traffic
+                            to protect your workspace from bad bots.
+                        </p>
+                    </mat-card-content>
+
+                    <!-- Footer Section with Light Grey Background -->
+                    <div class="card-footer-section">
+                        <mat-slide-toggle formControlName="isActivated" color="primary"
+                            class="custom-toggle"></mat-slide-toggle>
+
+                        <span class="learn-more-btn" (click)="onLearnMore()">
+                            <span>Learn more</span>
+                            <mat-icon class="arrow-icon">north_east</mat-icon>
+                        </span>
+                    </div>
+
+                </mat-card>
+            </div>
+
+            <br>
+            <mat-card appearance="outlined" class="addon-card">
+
+                <!-- Main Content Area -->
+                <mat-card-content class="card-body-content">
+                    <div class="price-tag">$25.00/month</div>
+                    <mat-card-title class="addon-title">Advanced bot protection</mat-card-title>
+                    <p class="addon-description">
+                        Safeguard your assets with our cutting-edge bot protection. Our AI solution identifies and
+                        mitigates automated traffic to protect your workspace from bad bots.
+                    </p>
+                </mat-card-content>
+
+                <!-- Footer Section with Light Grey Background -->
+                <div class="card-footer-section">
+                    <!-- Left: Slide Toggle -->
+                    <mat-slide-toggle formControlName="isActivated" color="primary" class="custom-toggle">
+                        Activate
+                        <mat-icon *matSlideToggleThumb>remove</mat-icon>
+                    </mat-slide-toggle>
+
+                    <!-- Right: Learn more with arrow icon -->
+                    <span class="learn-more-btn" (click)="onLearnMore()">
+                        <span>Learn more</span>
+                        <mat-icon class="arrow-icon">north_east</mat-icon>
+                    </span>
+                </div>
+
+            </mat-card>
+        </div>
+    </div>
+</div>
