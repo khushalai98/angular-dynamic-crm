@@ -1,0 +1,54 @@
+/* Container for the navigation tabs */
+.breadcrumb {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 24px;
+  border-bottom: 1px solid #e5e7eb; /* Light gray line running across */
+}
+
+/* Individual list items */
+.breadcrumb li {
+  margin: 0;
+}
+
+/* Style for the links */
+.breadcrumb a {
+  display: inline-block;
+  padding: 8px 4px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: #4b5563; /* Inactive text color */
+  position: relative;
+  // border-bottom: 3px solid transparent; 
+  // margin-bottom: -1px; 
+}
+
+/* Hover state */
+.breadcrumb a:hover {
+  color: #111827;
+}
+
+/* Active tab style applied by routerLinkActive="active" */
+.breadcrumb a.active {
+  color: #0f172a; /* Active text color */
+  font-weight: 600;
+  border-bottom: 3px solid #0284c7; /* The blue line effect */
+}
+
+@media screen and (max-width: 277px) {
+  .breadcrumb-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+  }
+
+  /* Optional: hides scrollbar across browsers */
+  .breadcrumb-container::-webkit-scrollbar {
+    display: none;
+  }
+}

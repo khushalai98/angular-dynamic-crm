@@ -1,0 +1,377 @@
+// personal info
+
+.personal-info-div {
+  // row is also aplaying by-default flex 
+  display: flex;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.sett-btn {
+  margin-top: 40px;
+  background-color: #DBE2F9 !important;
+  color: #303646 !important;
+}
+
+.notf-btn {
+  margin-top: 40px;
+  background-color: #DBE2F9 !important;
+  color: #303646 !important;
+}
+
+mat-checkbox {
+  // width: 100%;
+  display: block;
+
+  ::ng-deep {
+    .mdc-form-field {
+      // width: 100% !important;
+      display: flex !important;
+      justify-content: space-between !important;
+      // align-items: center !important;
+    }
+  }
+
+}
+
+mat-divider {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+// Danger Zone css 
+
+// .leave-workspace-card{
+//   display: flex;
+//   justify-content: space-between;
+//   gap: 4px;
+// }
+// .delete-card-row{
+//    display: flex;
+//   justify-content: space-between;
+//   gap: 4px;
+// }
+
+.danger-zone-row {
+  margin-top: 24px;
+}
+
+.learn-more-link mat-icon {
+  font-size: 16px;
+  width: 16px;
+  height: 16px;
+  margin-left: 4px;
+}
+
+.learn-more-link {
+  text-decoration: none;
+  color: #1976d2;
+  display: inline-flex;
+  align-items: center;
+}
+
+.learn-more-link:hover,
+.learn-more-link:focus {
+  text-decoration: underline;
+}
+
+.leave-card-row {
+  display: flex;
+  align-items: center;
+  /* Centers the button vertically with the text */
+  justify-content: space-between;
+  /* Pushes text to the left and button to the right */
+  gap: 16px;
+}
+
+.delete-card-row {
+  display: flex;
+  align-items: center;
+  /* Centers the button vertically with the text */
+  justify-content: space-between;
+  /* Pushes text to the left and button to the right */
+  gap: 4px;
+}
+
+.leave-card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  /* Space between title and subtitle */
+}
+
+.delete-card-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  /* Space between title and subtitle */
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.87);
+  margin: 0;
+}
+
+.card-subtitle {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.6);
+  line-height: 20px;
+  margin: 0;
+}
+
+.delete-button {
+
+  color: #d93025 !important;
+}
+
+.workspace-card-del {
+
+  background-color: #fce8e6 !important;
+  border-color: #d93025;
+
+}
+
+
+
+/* Small Mobile Devices (up to 320px) */
+@media screen and (max-width: 320px) {
+  .personal-form .col-6{
+    display: inline;
+    width: 100%;
+  }
+
+  .personal-info-div {
+    display: inline;
+    margin: 0;
+    justify-content: center;
+  }
+
+  .personal-text {
+    display: inline;
+  }
+
+  .personal-form {
+    display: inline;
+  }
+
+  .danger-zone-row {
+    display: inline;
+    justify-content: center;
+  }
+
+  .danger-text {
+    display: inline;
+  }
+
+  .workspace-card {
+    display: inline;
+  }
+
+  .noti-sett{
+    display: inline;
+  }
+  .noti-text{
+    display: inline;
+  }
+  .noti-form{
+    display: inline;
+  }
+
+}
+
+// /* Medium Mobile Devices (321px to 480px) */
+// @media screen and (min-width: 321px) and (max-width: 479px) {}
+
+// added to adjust scrollbar on bredcrump
+@media screen and (min-width: 321px) and (max-width: 365px) {
+
+
+  .personal-form .col-6{
+    display: inline;
+    width: 100%;
+  }
+
+  .personal-info-div {
+    display: inline;
+    margin: 0;
+    justify-content: center;
+  }
+
+  .personal-text {
+    display: inline;
+  }
+
+  .personal-form {
+    display: inline;
+  }
+
+  .danger-zone-row {
+    display: inline;
+    justify-content: center;
+  }
+
+  .danger-text {
+    display: inline;
+  }
+
+  .workspace-card {
+    display: inline;
+  }
+
+  .noti-sett{
+    display: inline;
+  }
+  .noti-text{
+    display: inline;
+  }
+  .noti-form{
+    display: inline;
+  }
+
+}
+
+// added to adjust responsiveness
+@media screen and (min-width:366px) and (max-width: 639px) {
+
+  .personal-form .col-6{
+    display: inline;
+    width: 100%;
+  }
+
+  .personal-info-div {
+    display: inline;
+    margin: 0;
+    justify-content: center;
+  }
+
+  .personal-text {
+    display: inline;
+  }
+
+  .personal-form {
+    display: inline;
+  }
+
+  .danger-zone-row {
+    display: inline;
+    justify-content: center;
+  }
+
+  .danger-text {
+    display: inline;
+  }
+
+  .workspace-card {
+    display: inline;
+  }
+
+  .noti-sett{
+    display: inline;
+  }
+  .noti-text{
+    display: inline;
+  }
+  .noti-form{
+    display: inline;
+  }
+
+}
+
+
+/* Large Mobile Devices (481px to 767px) */
+@media screen and (min-width: 640px) and (max-width: 767px) {
+
+  .personal-info-div {
+    display: inline;
+    margin: 0;
+    justify-content: center;
+  }
+
+  .personal-text {
+    display: inline;
+  }
+
+  .personal-form {
+    display: inline;
+  }
+
+  .danger-zone-row {
+    display: inline;
+    justify-content: center;
+  }
+
+  .danger-text {
+    display: inline;
+  }
+
+  .workspace-card {
+    display: inline;
+  }
+
+  .noti-sett{
+    display: inline;
+  }
+  .noti-text{
+    display: inline;
+  }
+  .noti-form{
+    display: inline;
+  }
+
+}
+
+/* Small Tablets (768px to 1024px) - Fixed from 765px to 768px */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+  .leave-card-row {
+    display: flex;
+    align-items: center;
+    /* Centers the button vertically with the text */
+    justify-content: space-between;
+    /* Pushes text to the left and button to the right */
+    gap: 16px;
+  }
+
+  .delete-card-row {
+    display: flex;
+    align-items: center;
+    /* Centers the button vertically with the text */
+    justify-content: space-between;
+    /* Pushes text to the left and button to the right */
+    gap: 48px;
+  }
+
+  .leave-card-text {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    /* Space between title and subtitle */
+  }
+
+  .delete-card-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    /* Space between title and subtitle */
+  }
+
+}
+
+/* Large Tablets (1025px to 1280px) */
+@media screen and (min-width: 1025px){}
+
+/* Small Laptops (11 to 13 inches) */
+@media screen and (min-width: 1281px) and (max-width: 1366px) {}
+
+/* Medium Laptops (14 to 15 inches) */
+@media screen and (min-width: 1367px) and (max-width: 1600px) {}
+
+/* Large Laptops (16 to 17 inches) */
+@media screen and (min-width: 1601px) and (max-width: 1920px) {}
+
+/* Extra Large Screens (18 inches and above) */
+@media screen and (min-width: 1921px) {}

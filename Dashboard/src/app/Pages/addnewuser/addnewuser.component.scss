@@ -1,0 +1,116 @@
+/* Header layout for Title + Add User Button */
+
+.user-row-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.add-user-button{
+     background-color: #DBE2F9 !important;
+     color: #303646 !important;
+}
+
+.user-info-group{
+    display:flex;
+    align-items: center;
+}
+
+.user-text{
+    padding: 8px;
+}
+
+.user-actions{
+  display: flex;
+  margin-left: auto;
+  align-items: center;
+  
+}
+
+/* Individual list item row */
+.user-item {
+  padding: 12px 0;
+  height: auto !important; /* Overrides default Material list height */
+  display: flex;
+  align-items: center;
+
+}
+
+/* Circular Avatar for Initials */
+.avatar-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #e2e8f0;
+  background-color: #f8fafc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  font-size: 14px;
+  color: #475569;
+  flex-shrink: 0;
+  padding: 8;
+}
+
+/* Adjust Angular Material Form Field height inside list rows */
+.role-select-field {
+  width: 160px;
+  margin-bottom: -1.25em; /* Clears Angular Material default bottom hint margin */
+
+  ::ng-deep {
+    .mat-mdc-text-field-wrapper {
+      height: 48px !important;
+      padding: 0 12px !important;
+    }
+
+    .mat-mdc-form-field-flex {
+      height: 48px !important;
+      align-items: center;
+    }
+
+    .mat-mdc-select-value-text {
+      font-size: 14px;
+    }
+  }
+}
+
+// /* Responsive adjustments for mobile screens (e.g. 320px) */
+// @media screen and (max-width: 480px) {
+//   .user-header {
+//     flex-direction: column;
+//     align-items: flex-start;
+//     gap: 12px;
+//   }
+
+//   .role-select-field {
+//     width: 100px;
+//   }
+// }
+
+/* Small Mobile Devices (up to 320px) */
+@media screen and (max-width: 320px) {}
+
+/* Medium Mobile Devices (321px to 480px) */
+@media screen and (min-width: 321px) and (max-width: 480px)  {}
+
+/* Large Mobile Devices (481px to 767px) */
+@media screen and (min-width: 481px) and (max-width: 767px) {}
+
+/* Small Tablets (768px to 1024px) */
+@media screen and (min-width: 765px) and (max-width: 1024px)  {}
+
+/* Large Tablets (1025px to 1280px) */
+@media screen and (min-width: 1025px) and (max-width: 1280px) {}
+
+/* Small Laptops (11 to 13 inches) */
+@media screen and (min-width: 1281px) and (max-width: 1366px) {}
+
+/* Medium Laptops (14 to 15 inches) */
+@media screen and (min-width: 1367px) and (max-width: 1600px)  {}
+
+/* Large Laptops (16 to 17 inches) */
+@media screen and (min-width: 1601px) and (max-width: 1920px) {}
+
+/* Extra Large Screens (18 inches and above) */
+@media screen and (min-width: 1921px) {}
